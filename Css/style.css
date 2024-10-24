@@ -1,0 +1,223 @@
+/* Variables */
+:root {
+  --color-primary: #fb4934;
+  --color-secondary: #b8bb26;
+  --color-tertiary: #fabd2f;
+  --color-quaternary: #83a598;
+  --color-quinary: #d3869b;
+  --color-senary: #8ec07c;
+  --color-septenary: #fe8019;
+  --color-octonary: #928374;
+  --color-novenary: #ebdbb2;
+  --color-white: #f8f8f2;
+  --color-black: #282828;
+  --color-grey: #928374;
+  --color-light-grey: #a89984;
+  --color-dark-grey: #3c3836;
+  --color-light-red: #cc241d;
+  --color-dark-red: #9d0006;
+  --color-light-green: #98971a;
+  --color-dark-green: #79740e;
+  --color-light-yellow: #d79921;
+  --color-dark-yellow: #b57614;
+  --color-light-blue: #458588;
+}
+
+/* General */
+
+/* Ocultar el checkbox pero mantenerlo accesible */
+#sidebar-toggle {
+  display: none;
+}
+
+/* Estilo para el botón de toggle */
+.sidebar-toggle-label {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 101;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+/* Estilos base del sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+/* Contenido principal */
+.main-content {
+  transition: all 0.3s;
+  margin-left: 250px;
+}
+
+/* Lógica del toggle usando el selector de hermanos adyacentes (~) */
+#sidebar-toggle:checked ~ .container-fluid .sidebar {
+  margin-left: -100%;
+}
+
+#sidebar-toggle:checked ~ .container-fluid .main-content {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767.98px) {
+  .sidebar {
+    margin-left: -100%;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #sidebar-toggle:checked ~ .container-fluid .sidebar {
+    margin-left: 0;
+  }
+}
+
+/* aplicar paleta de colores */
+body {
+  background-color: var(--color-dark-grey);
+  color: var(--color-white);
+}
+
+.sidebar {
+  background-color: var(--color-light-grey) !important;
+}
+
+.sidebar a {
+  color: var(--color-dark-grey);
+}
+
+.sidebar a:hover {
+  color: var(--color-dark-green);
+}
+
+/* BOTONES */
+.btn {
+  background-color: var(--color-senary);
+  color: var(--color-white);
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  /* cambiar el color del contorno */
+  border: 1px solid var(--color-dark-grey);
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: var(--color-quaternary);
+  border: 1px solid var(--color-dark-grey);
+}
+
+.btn:active {
+  background-color: var(--color-quinary) !important;
+  border: 1px solid var(--color-dark-grey) !important;
+}
+
+/* Ocultar el checkbox original */
+#sidebar-toggle {
+  display: none;
+}
+
+/* Estilo para el label que actúa como el checkbox */
+.sidebar-toggle-label {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+  background-color: var(--color-senary); /* Cambia este color al que desees */
+  color: var(--color-white);
+  /* hacerlo mas pequeño y redondo */
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin: auto;
+}
+
+* {
+  font-family: "JetBrains Mono";
+}
+
+/* cards */
+.card {
+  background-color: var(--color-light-grey);
+  color: var(--color-dark-grey);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card h5 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card a {
+  color: var(--color-dark-grey);
+  text-decoration: none;
+}
+
+/* Table styles using the existing color palette */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--color-dark-grey);
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid var(--color-grey);
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid var(--color-grey);
+  background-color: var(--color-light-green);
+}
+
+.table tbody + tbody {
+  border-top: 2px solid var(--color-grey);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--color-light-grey);
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--color-light-yellow);
+}
+
+.table th {
+  text-align: left;
+  background-color: var(--color-light-blue);
+  color: var(--color-white);
+}
+
+.table td,
+.table th {
+  white-space: nowrap;
+  background-color: var(--color-novenary);
+}
